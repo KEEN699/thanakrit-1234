@@ -5,9 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 import { UsersModule } from './modules/users/users.module';
-import { CatrgoryModule } from './modules/catrgory/catrgory.module';
-import { CatrgorService } from './modules/catrgory/catrgor.service';
-import { CatrgorController } from './modules/catrgory/catrgor.controller';
+import { CategoriesModule } from './modules/categories/categories.module';
 
 
 @Module({
@@ -23,10 +21,9 @@ import { CatrgorController } from './modules/catrgory/catrgor.controller';
       inject: [ConfigService],
     }),
     UsersModule,
-    CatrgoryModule,
-
+    CategoriesModule,
   ],
-  controllers: [AppController, CatrgorController],
-  providers: [AppService, CatrgorService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
