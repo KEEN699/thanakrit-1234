@@ -22,8 +22,8 @@ export class UsersController {
     return this.service.create(body);
   }
 
-  @ApiBearerAuth()
-  @UseGuards(AuthGuard('jwt'))
+  // @ApiBearerAuth()
+  // @UseGuards(AuthGuard('jwt'))
   @Get()
   findAll() {
     return this.service.findAll();
